@@ -1,29 +1,15 @@
 import java.util.Scanner;
 class Solution {
-    public static int[] getMoreAndLess(int arr[], int x, int n) {
-        int ans[] = new int[2];
-        int low = 0;
-        int high = 0;
-        for(int i = 0; i < n; i++) {
-            if(arr[i] < x) {
-                low++;
-                ans[0] = low;
-                ans[1] = high;
-                System.out.println("low");
-            }else if(arr[i] == x) {
-                System.out.println("high");
-                high = (n - i);
-                ans[0] = ++low;
-                ans[1] = high;
-                break;
-            }else {
-                high = (n - i);
-                ans[0] = low;
-                ans[1] = high;
-                break;
-            }
+    static int[] getMoreAndLess(int[] arr, int n, int x) {
+        // code here
+        int count1 = 0, count2 = 0;
+        
+        for(int i: arr){
+            if(x >= i) count1++;
+            if(x <= i) count2++;
         }
-        return ans;
+        
+        return  new int [] {count1, count2};
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
