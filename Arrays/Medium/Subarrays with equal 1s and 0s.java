@@ -9,17 +9,13 @@ class Solution {
                 for(int k = i; k <= j; k++) {
                     if(arr[k] == 1) {
                         ++ocount;
-                        System.out.print("one"+" ");
                     }else{
                         ++zcount;
-                        System.out.print("zero"+" ");
                     }
                 }
                 if(ocount == zcount && ocount != 0) {
                     tcount++;
-                    System.out.print("found");
                 }
-                System.out.println("Next");
             }
         }
         return tcount;
